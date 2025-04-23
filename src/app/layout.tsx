@@ -11,9 +11,11 @@ export const metadata: Metadata = {
   title: 'DareDash Waitlist',
   description: 'Join the waitlist for DareDash - The BeReal of Dares',
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
-  },
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/logo.png', sizes: 'any' }
+    ]
+  }
 };
 
 export default function RootLayout({
@@ -23,6 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+      </head>
       <body className={poppins.className}>{children}</body>
     </html>
   );
