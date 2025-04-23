@@ -31,9 +31,9 @@ export default function Home() {
       setStatus('success');
       setMessage('You\'re in! Stay tuned in your inbox.');
       setFormData({ firstName: '', lastName: '', email: '', referralSource: '' });
-    } catch (error) {
+    } catch (err) {
       setStatus('error');
-      setMessage('Something went wrong. Please try again.');
+      setMessage(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
     }
   };
 
